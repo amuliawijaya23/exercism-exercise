@@ -8,11 +8,15 @@ describe('#frontDoorResponse', () => {
 });
 
 describe('frontDoorPassword', () => {
-  
+  it('Formats the given word so that only the first character is capitalized', () => {
+    assert.strictEqual(frontDoorPassword('SHIRE'), 'Shire');
+  });
 });
 
 describe('backDoorResponse', () => {
-
+  it('Returns the last character of a given line', () => {
+    assert.strictEqual(backDoorResponse('No you can\'t'), 't');
+  });
 });
 
 describe('backDoorPassword', () => {
