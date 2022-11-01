@@ -7,7 +7,8 @@ const frontDoorPassword = (word) => {
 };
 
 const backDoorResponse = (line) => {
-  return line[(line.length - 1)];
+  const newLine = line.trim();
+  return newLine[(newLine.length - 1)];
 };
 
 const backDoorPassword = (word) => {
