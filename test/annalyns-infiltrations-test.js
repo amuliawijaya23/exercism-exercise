@@ -58,6 +58,30 @@ describe('#canSignalPrisoner', () => {
   });
 });
 
+/**
+ * Tests the canFreePrisoner function
+ * takes knightIsAwake, archerIsAwake, prisonerIsAwake, and petDogIsPresent parameter
+ * returns a boolean
+ */
+
+describe('#canFreePrisoner', () => {
+  it('should return true if pet dog is present, knight, archer, and prisoner are asleep', () => {
+    assert.strictEqual(canFreePrisoner(false, false, false, true), true);
+  });
+  it('should return true if pet dog is present, knight is awake, archer and prisoner are asleep', () => {
+    assert.strictEqual(canFreePrisoner(true, false, false, true), true);
+  });
+  it('should return false if pet dog is not present, while knight, archer, and prisoner are asleep', () => {
+    assert.strictEqual(canFreePrisoner(false, false, false, false), false);
+  });
+  it('should return false if pet dog is not present while knight and prisoner are awake, archer is asleep', () => {
+    assert.strictEqual(canFreePrisoner(true, false, true, false), false);
+  });
+  it('should return true when pet dog is not present, prisoner is awake, knight and archer are asleep', () => {
+    assert.strictEqual(canFreePrisoner(false, false, true, false), true);
+  });
+});
+
 
 
 
