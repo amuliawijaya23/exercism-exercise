@@ -8,7 +8,7 @@ const daysInBudget = (fixedBudget, hourlyRate) => {
 
 const priceWithMonthlyDiscount = (hourlyRate, numberOfDays, discountRate) => {
   const remainingDays = numberOfDays % 22;
-  const daysInMonths = numberOfDays = remainingDays;
+  const daysInMonths = numberOfDays - remainingDays;
 
   const discountedRate = ((1 - discountRate) * hourlyRate) * (daysInMonths * 8);
   const proRatedRate = remainingDays * (hourlyRate * 8);
