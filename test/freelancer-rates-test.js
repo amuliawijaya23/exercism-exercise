@@ -1,4 +1,4 @@
-const { dayRate } = require('../freelancer-rates');
+const { dayRate, daysInBudget, priceWithMonthlyDiscount } = require('../freelancer-rates');
 const assert = require('chai').assert;
 
 describe('#dayRate', () => {
@@ -16,3 +16,20 @@ describe('#dayRate', () => {
   });
 });
 
+describe('#daysInBudget', () => {
+  it('Returns number of working days given a budget and hourly rate', () => {
+    const expectedResult = 30;
+    assert.strictEqual(daysInBudget(4800, 20), expectedResult);
+  });
+  it('Returns the number of days rounded down to nearest whole number when result is a decimal', () => {
+    const expectedResult = 33;
+    assert.strictEqual(daysInBudget(12250, 45.2), expectedResult);
+  });
+});
+
+describe('#priceWithMonthlyDiscount', () => {
+  it('Returns rate for large project given hourly rate, number of days, and monthly discount rate and rounded up to nearest whole number', () => {
+    const expectedResult = 97972;
+    assert.strictEqual(priceWithMonthlyDiscount(89, 230, 0.42), expectedResult);
+  });
+});
