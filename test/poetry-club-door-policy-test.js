@@ -20,5 +20,7 @@ describe('backDoorResponse', () => {
 });
 
 describe('backDoorPassword', () => {
-
+  it('Formats the given word and adds please after the word', () => {
+    assert.strictEqual(backDoorPassword('horse'), 'Horse, please');
+  });
 });
