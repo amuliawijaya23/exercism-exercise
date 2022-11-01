@@ -1,17 +1,17 @@
-const frontDoorResponse = () => {
-
+const frontDoorResponse = (line) => {
+  return line[0];
 };
 
-const frontDoorPassword = () => {
-
+const frontDoorPassword = (word) => {
+  return `${word[0].toUpperCase()}${(word.slice(1)).toLowerCase()}`;
 };
 
-const backDoorResponse = () => {
-
+const backDoorResponse = (line) => {
+  return line[(line.length - 1)];
 };
 
-const backDoorPassword = () => {
-
+const backDoorPassword = (word) => {
+  return `${word[0].toUpperCase()}${(word.slice(1)).toLowerCase()}, please`;
 };
 
 module.exports = {
